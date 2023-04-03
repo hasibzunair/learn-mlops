@@ -10,3 +10,9 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 * Tracking and analyzing experiments
 * Automating hyperparameter optimization with Sweeps
 * Model evaluation techniques that ensure reproducibility and enterprise-level governance
+
+## Course notes
+
+**[April 3, 2023]** Lesson 1.
+
+Workflow: Understand business context, frame the data science problem, explore and understand data, establish baseline metrics and models, communicate results
