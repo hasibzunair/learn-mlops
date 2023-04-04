@@ -11,6 +11,9 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 * Automating hyperparameter optimization with Sweeps
 * Model evaluation techniques that ensure reproducibility and enterprise-level governance
 
+## Todos
+* Make HF demo with trained model
+
 ## Course notes
 
 **[April 3, 2023]** Lesson 1.
