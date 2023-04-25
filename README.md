@@ -16,6 +16,10 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 
 ## Course notes
 
+**[April 25, 2023]** Lesson 2.
+
+Hyperparam opt and collaborative model training: organize code for exps, conduct exps, analyze, share results.
+
 **[April 10, 2023]** Lesson 1.
 
 W&B Tables: Visualize data + model preds, quickly spot check rows from dataset
