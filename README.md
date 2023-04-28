@@ -11,6 +11,12 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 * Automating hyperparameter optimization with Sweeps
 * Model evaluation techniques that ensure reproducibility and enterprise-level governance
 
+## Assignments
+
+1. [Baseline Report](https://wandb.ai/hasibzunair/mlops-course-001/reports/Baseline-Report--Vmlldzo0MDI1NDI1)
+2. 
+
+
 ## Todos
 * Make HF demo with trained model
 
