@@ -14,7 +14,7 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 ## Assignments
 
 1. [Baseline Report](https://wandb.ai/hasibzunair/mlops-course-001/reports/Baseline-Report--Vmlldzo0MDI1NDI1)
-2. 
+2. TBA
 
 
 ## Todos
@@ -25,6 +25,15 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 **[April 25, 2023]** Lesson 2.
 
 Hyperparam opt and collaborative model training: organize code for exps, conduct exps, analyze, share results.
+
+Run 04_refactor_baseline.ipynb
+
+Run `python train.py --batch_size 16`.
+
+Run sweeps by `wandb sweep sweep.yaml` and `wandb agent hasibzunair/mlops-course-001/q6qjanng --count50`.
+
+From sweep, best results:
+`python train.py --arch=resnet18 --batch_size=4 --img_size=320 --log_preds=True --lr=0.00023256420282452968 --epochs 20`
 
 **[April 10, 2023]** Lesson 1.
 
