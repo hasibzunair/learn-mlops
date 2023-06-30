@@ -14,15 +14,12 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 ## Assignments
 
 1. [Baseline Report](https://wandb.ai/hasibzunair/mlops-course-001/reports/Baseline-Report--Vmlldzo0MDI1NDI1)
-2. TBA
+2. [Sweep Analysis](https://api.wandb.ai/links/hasibzunair/k4cz7i4d)
 
-
-## Todos
-* Make HF demo with trained model
 
 ## Course notes
 
-**[April 25, 2023]** Lesson 2.
+**[June 30, 2023]** Lesson 2.
 
 Hyperparam opt and collaborative model training: organize code for exps, conduct exps, analyze, share results.
 
