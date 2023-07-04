@@ -19,6 +19,25 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 
 ## Course notes
 
+**[June 30, 2023]** Lesson 3. 
+
+Data partitioning: Train, val, test
+
+Partition drawn from same distribution. Val/test should be like production.
+
+No leakage between partitions.
+
+Group partition: 
+
+camera 1 images -> train
+camera 2, 3 images -> val
+camera 4 -> test
+
+Related data points should **not** cross the partition boundary. Otherwise it will be cheating 
+as the model has seen the data before.
+
+Data partitioning, choose evaluation metric, error case analysis, documentation.
+
 **[June 30, 2023]** Lesson 2.
 
 Hyperparam opt and collaborative model training: organize code for exps, conduct exps, analyze, share results.
