@@ -21,6 +21,9 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 
 **[June 30, 2023]** Lesson 3. 
 
+Stratifie partition: helpful for rare labels. Equal samples in train/val/test.
+
+
 Data partitioning: Train, val, test
 
 Partition drawn from same distribution. Val/test should be like production.
