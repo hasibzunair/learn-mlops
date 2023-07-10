@@ -19,6 +19,10 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 
 ## Course notes
 
+**[July 10, 2023]** Lesson 3.
+
+Error analysis. Look at images per class, see where low metric (IoU, Acc). Categorize issues among 100 or more examples. Training set incorrect labels!
+
 **[June 30, 2023]** Lesson 3. 
 
 Stratifie partition: helpful for rare labels. Equal samples in train/val/test.
