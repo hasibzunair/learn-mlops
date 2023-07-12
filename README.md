@@ -29,9 +29,11 @@ Test set metrics are very diff, why?
 - Noise?
 - Re-partition data and start model process all over again. 
 
+Data leakage occurs when you use information "from the future" in your model.
+
 **[June 30, 2023]** Lesson 3. 
 
-Stratifie partition: helpful for rare labels. Equal samples in train/val/test.
+Stratifie partition: helpful for rare labels. Equal samples in train/val/test. Do this for imbalanced datasets.
 
 
 Data partitioning: Train, val, test
