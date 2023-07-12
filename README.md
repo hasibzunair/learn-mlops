@@ -23,6 +23,12 @@ My notes and materials while learning [Effective MLOps: Model Development](https
 
 Error analysis. Look at images per class, see where low metric (IoU, Acc). Categorize issues among 100 or more examples. Training set incorrect labels!
 
+Test set metrics are very diff, why?
+- Look for leakage, split right?
+- Holdout set different. Adversarial validation
+- Noise?
+- Re-partition data and start model process all over again. 
+
 **[June 30, 2023]** Lesson 3. 
 
 Stratifie partition: helpful for rare labels. Equal samples in train/val/test.
