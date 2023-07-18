@@ -1,12 +1,7 @@
-# I'm on Cloud
+# Learn Effective MLOps: Model Development
 
-My notes and materials while learning cloud stuff.
+My notes and materials while learning [Effective MLOps: Model Development](https://github.com/wandb/edu/tree/main/mlops-001).
 
-<<<<<<< HEAD
-### Related links
-* [Docker for the Absolute Beginner - Hands On - DevOps Repo](https://github.com/hasibzunair/learn-docker)
-* [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
-=======
 ## What the course offers?
 
 * Best practice machine learning workflows
@@ -84,4 +79,3 @@ Create reports and summarize findings.
 **[April 3, 2023]** Lesson 1.
 
 Workflow: Understand business context, frame the data science problem, explore and understand data, establish baseline metrics and models, communicate results
->>>>>>> 366548edf7d99b3801903e5f313cd697921b72af
