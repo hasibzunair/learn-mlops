@@ -50,6 +50,7 @@ Execute code in response to an event
 Write code as function, define entry point and exit point. Does not run forever.
 Function as a service (FaaS)
 
+Go to Compute Engine and VM instances, create a VM. And then: 
 ```
 # Launch a GCE instance
 gcloud compute instances list
@@ -60,3 +61,60 @@ Sudo apt-get install -y apache2
 Sudo systemctl start apache2
 # now see external IP, you should see webpage
 ```
+
+### Section 5
+
+Object, block and file system
+
+GCP Storage: Unstructured data, folder and files.
+
+**Cloud Storage**: GCS API, store large data
+
+Standard storage class: Images (high frequency access)
+Nearline: Data accessed less frequently
+Coldline: Accessed least frequently
+
+Nearline and coldline for backup or archival data.
+
+**Persistent Disks**: If we want storage attached to compute (GCE/VMs). Lifecycle of PD is not dependent on VMs. Massive storage (64TB).
+
+**Cloud filestore**: mimic local file system.
+
+Bucket -> Folder -> Files
+
+### Section 6
+
+GCP Network services. Premium and standard network tier.
+
+Load balancer distributes traffic across multiple GCE VMs in a single or multiple regions. Deploy app across globe!
+
+HTTPS and Network load balancer.
+
+HTTPS -> web apps, global
+Netowrk -> confined to a region 
+
+Internal or external load balancing.
+
+Virtual private cloud (VPC): private networking for VMs.
+
+Hybrid connectivity: Cloud Interconnect, Cloud VPN, Peering.
+
+Go to Compute Engine -> Instances templates and create instance
+```bash
+# Copy this code in startup script when creating instance
+
+#! /bin/bash
+apt-get update
+apt-get install -y apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Hello from $(hostname)</h1>
+</body></html>
+EOF
+```
+Then go to CE -> Instance Groups.
+
+Summary: Instance template, VM Config, Instance Group (2), Health check, all withing GCE. Then network services,load balancing: backend and health check, front end. Gives public IP.
+
+Load balancer talking GCE VMs.
+
+### Section 7
