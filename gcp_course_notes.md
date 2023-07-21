@@ -118,3 +118,33 @@ Summary: Instance template, VM Config, Instance Group (2), Health check, all wit
 Load balancer talking GCE VMs.
 
 ### Section 7
+
+Resources: Projects, Cloud Storage buckets, Compute Engine instances.
+
+Permissions.
+
+Cloud IAM controls access, who has access to what: who ,what, which. Enable or disable a resource for a member.
+
+By default all access denied.
+
+Cloud IAM permissions.
+
+Roles: Owner, Editor, Viewer.
+
+Users: Google account, google group, g suite domain
+
+Resource, permissions, roles and users.
+
+IAM service account.
+
+### Section 8
+
+Database services.
+
+Cloud SQL.
+
+MySQL, PostgreSQL.
+
+**Cloud Bigtable**: Storage engine for large-scale, low-latency applications. Data processing and analytics workload. Datastore for ML applications.
+
+Cloud spanner: Relational database service. Scale across regions.
