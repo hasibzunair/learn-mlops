@@ -167,3 +167,12 @@ Cloud datalab: Tool for exploring, vis, ana;yze and query data, analyze, vis and
 
 BigQuery: Analyze data, cloud data warehouse. Ingest data automatically. In memory BI engine and ML built in. Automatically replicates data to keep history of changes.
 
+### Section 10
+
+### Section 11
+
+### Section 12
+
+### Section 13
+
+
