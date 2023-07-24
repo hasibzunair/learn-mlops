@@ -148,3 +148,22 @@ MySQL, PostgreSQL.
 **Cloud Bigtable**: Storage engine for large-scale, low-latency applications. Data processing and analytics workload. Datastore for ML applications.
 
 Cloud spanner: Relational database service. Scale across regions.
+
+### Section 9
+
+GCP Data Analytics & Services
+
+Cloud pub/sub, data flow, dataproc, datalab, bigquery
+
+Ingestion collection process analyze and visualize data
+
+Cloud pub/sub: Ingest data, entry point to gcp-based analytics service. Staging location for data. 
+
+Cloud data flow: Preprocess, Transform and enhance data in stream. Apache Beam project. Tighly integrated with Bigquery, Cloud ML, Cloud pub/sub. Easy to integrate Apache Kafka.
+
+Cloud data proc: Scale big data infra. Move big data projects to GCP without redevelopment. 
+
+Cloud datalab: Tool for exploring, vis, ana;yze and query data, analyze, vis and ML. Runs on compute engine and may connect to multiple cloud services. Quick analysis, support python sql java langs. 
+
+BigQuery: Analyze data, cloud data warehouse. Ingest data automatically. In memory BI engine and ML built in. Automatically replicates data to keep history of changes.
+
