@@ -8,6 +8,7 @@ My notes and materials while learning cloud stuff.
 * Deploy frontend gradio ML app on GCP
 * Train, test and deploy model as an API using all GCP AI components
 * Auto train and deploy?
+* Dockerize the API and then deploy it on a k8s cluster running on Google Kubernetes Engine (GKE), Google Cloud Run.
 
 
 ### Resources
