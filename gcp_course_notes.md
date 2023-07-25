@@ -169,6 +169,30 @@ BigQuery: Analyze data, cloud data warehouse. Ingest data automatically. In memo
 
 ### Section 10
 
+ML and AI services
+Cloud AI Building Blocks
+Cloud AutoML
+AI Platform
+AI Hub
+Use cases of ML and AI services.
+
+**GCP AI Building Blocks**: Sight (Vision, Video), Conversation (Text to speech), Language (translation), Structured data (recommendations). Black boxes, cannot work on custom data.
+
+**Google Cloud AutoML**: Train model but dont write complex code. Custom ML models, Google SOTA ML algo. Sight (Vision and video intelligence), Language, Structured data. Useful for custom data specific to a business problem.
+
+**Google Cloud AI Platform**: Advanced use cases. Covers entires spectrum of ML pipelines, built on kubeflow, include tools for data prep, train, infer.
+
+Google Cloud AI Platform workflow: Ingest data, prepare, process, discover, develop, train, test and analyze, deploy.
+
+**Google Cloud AI Hub**: Hosted repo of AI components. Easy for collab, private and public content. Kubeflow pipeline components, jupyter notebooks, tensorflow modules, VM images, trained model and so on.
+
+**Overview**: 
+
+Cloud building blocks: REST API endpoint (Infuse AI into app with API call)
+Cloud AutoML: Based on custom data, no-code approach to training models (Train and deploy models on custom data)
+AI Platform: ML Pipelines (Train ML models on-prem and deploy it in the cloud)
+AI Hub: ML artifact repo to save models datasets etc. (Reuse existing TensorFlow models share by other users.)
+
 ### Section 11
 
 ### Section 12
