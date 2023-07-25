@@ -4,9 +4,10 @@ My notes and materials while learning cloud stuff.
 
 ### GCP course todos
 
-* Deploy gradio ML app on GCP
-* Make REST API with GCP, use old docker API code for this
-* TBA.
+* Deploy API on cloud run, call API locally (use old docker API code for this)
+* Deploy frontend gradio ML app on GCP
+* Train, test and deploy model as an API using all GCP AI components
+* Auto train and deploy?
 
 
 ### Resources
