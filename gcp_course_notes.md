@@ -195,6 +195,49 @@ AI Hub: ML artifact repo to save models datasets etc. (Reuse existing TensorFlow
 
 ### Section 11
 
+DevOps Services.
+
+Cloud source repositories: private git repo, git workflow, cloud pub/sub, compute services. Unlimited private git repo, mirror code from github. Trigger automatically build, test, deploy code. Code search. 
+
+Cloud Build: CI/CD tool. Any language. Deploy in multiple environments. Integration with github, bitbuket etc. Support docker with auto deploy to Kubernetes or GKE.
+
+Container Registry: Manage container images, GCE, GKE. Very fast, secure private scalable docker registry within GCP. Access, view and download images. 
+
+Dev Tools: VSCode IDE, enhance dev productivity.
+
+Demo time: Go to GCP Container Registry. To go cloud shell and run:
+
+```
+# this is demo.sh
+gcloud services enable containerregistry.googleapis.com
+
+export PROJECT_ID=focus-semiotics-393216
+
+docker pull busybox
+docker images
+
+# build, tag, run
+docker build . -t mybusybox # see code snippet below to make dockerfile before running this
+docker tag mybusybox gcr.io/$PROJECT_ID/mybusybox:latest
+docker run gcr.io/$PROJECT_ID/mybusybox:latest # test local image, should give date and time
+
+# gcp creds with docker cli
+gcloud auth configure-docker
+docker push gcr.io/$PROJECT_ID/mybusybox:latest
+```
+
+```
+# this is Dockerfile
+from busybox:latest
+CMD ["date]
+```
+Now if you refresh Container Registry page, there will be mybusybox image.
+
+Cloud Source Repo: Store code
+Cloud Build: Pipelines to deploy code
+Container Registry: Store images in same regions as GKE clusters.
+IDE Integration: Manage and deploy apps from the IDE.
+
 ### Section 12
 
 ### Section 13
