@@ -240,6 +240,20 @@ IDE Integration: Manage and deploy apps from the IDE.
 
 ### Section 12
 
+Cloud IoT, API management, Hybrid and multi-cloud
+
+Cloud IoT: IoT core, Edge TPU for machine learning (runs offline).
+
+API management: API platform, API analytics, Cloud endpoints.
+
+Hybrid and multi-cloud: Traffic director, Stackdriver, GKE on-prem.
+
+Anthos. Went over my head lol
+
+Transfer appliance to import large datasets into google cloud storage.
+
 ### Section 13
 
+Compute, Storage, Network, IAM, Database, Data and analytics, AI/ML, DevOps, Others.
 
+Next steps -> GCP Associate Cloud Engineer -> https://cloud.google.com/learn/certification
