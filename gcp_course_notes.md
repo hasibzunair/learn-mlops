@@ -3,6 +3,7 @@
 Course Link - [Link](https://www.udemy.com/course/google-cloud-platform-gcp-fundamentals-for-beginners/)
 
 ### Section 1
+
 Know building blocks of GCP
 Compute, storage, networking, databases, devops, AI and anthers 
 
