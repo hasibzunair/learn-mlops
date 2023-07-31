@@ -43,3 +43,73 @@ For generic use-cases. Vision API (object detection or OCR).
 Speech to text, language translation -> NLP API
 
 No training data needed. Use prebuilt REST API. 
+
+## Section 7
+
+Vision API: Text, Landmark, Logo, label detection, object localization, crop hint detection, safe search. Does not work on your own custom image use-cases, for example a type of flower.
+
+Label detection from image.
+
+Try in browzer: https://cloud.google.com/vision/docs/drag-and-drop
+
+API explorer: https://cloud.google.com/vision/docs/detect-labels-image-api
+
+Using command line option (https://cloud.google.com/vision/docs/detect-labels-image-command-line):
+
+```
+# Go to cloud shell
+gcloud auth print-access-token
+```
+
+Enable Cloud Vision API.
+
+Make requst.json in cloud shell:
+
+```json
+{
+  "requests": [
+    {
+      "image": {
+        "source": {
+          "imageUri": "gs://hasib-bucket/images/train2757.jpg"
+        }
+      },
+      "features": [
+        {
+          "type": "LABEL_DETECTION",
+          "maxResults": 30
+        },
+        {
+          "type": "OBJECT_LOCALIZATION",
+          "maxResults": 1
+        },
+        {
+          "type": "TEXT_DETECTION",
+          "maxResults": 1,
+          "model": "builtin/latest"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Then, run:
+```bash
+curl -X POST \
+    -H "Authorization: Bearer "$(gcloud auth print-access-token) \
+    -H "Content-Type: application/json; charset=utf-8" \
+    -H "X-Goog-User-Project:focus-semiotics-393216" \
+    https://vision.googleapis.com/v1/images:annotate -d @request.json
+```
+You will see a JSON response.
+
+Next, `gcloud` tool: 
+```
+gcloud ml vision detect-labels gs://hasib-bucket/images/train2757.jpg
+gcloud ml vision detect-faces gs://hasib-bucket/images/train2757.jpg # no faces!
+```
+
+You will see a JSON response.
+
+Python client: see `request.py`.

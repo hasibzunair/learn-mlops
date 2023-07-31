@@ -1,6 +1,7 @@
 # Custom
 .DS_Store
-wandb/
+*.json
+
 artifacts/
 models/
 
