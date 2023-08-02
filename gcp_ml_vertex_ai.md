@@ -112,4 +112,27 @@ gcloud ml vision detect-faces gs://hasib-bucket/images/train2757.jpg # no faces!
 
 You will see a JSON response.
 
-Python client: see `request.py`.
+Python client: see [request_annotate.py](./gcp_vertex_ai_course/request_annotate.py).
+
+OCR: works on images as well as PDF files. See [here](https://cloud.google.com/vision/docs/ocr). Go to cloud shell and run: 
+```
+gcloud ml vision detect-text image1.png
+````
+
+Landmark: Run the following
+```
+gcloud ml vision detect-landmarks tower.png
+gcloud ml vision detect-logos logo.png
+```
+
+Image properties: `gcloud ml vision detect-image-properties tower.png` cropHintsAnnotation suggest where to crop image, gives good fit. dominantColors show colors in image.
+
+Object localization: `gcloud ml vision detect-objects train2757.jpg`
+
+Web entities: `gcloud ml vision detect-web elon.png`. Find similar or same images on internet.
+
+Safe search: `gcloud ml vision detect-safe-search violence.png`
+
+Face detection: `gcloud ml vision detect-faces faces.png`
+
+So far, demos are done with gcloud, see guides to access using Python API: https://cloud.google.com/vision/docs/how-to.

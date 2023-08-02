@@ -3,9 +3,11 @@ import os
 
 from google.cloud import vision 
 
+"""Get labels from images."""
+
 # for local dev
 # pip install google-cloud-vision
-# create service account and get key
+# create service account and get key in gcp IAM (get json)
 # export GOOGLE_APPLICATION_CREDENTIALS="KEY_PATH"
 # run python request.py
 
