@@ -59,6 +59,7 @@ Using command line option (https://cloud.google.com/vision/docs/detect-labels-im
 ```
 # Go to cloud shell
 gcloud auth print-access-token
+gcloud ml vision --help
 ```
 
 Enable Cloud Vision API.
@@ -115,6 +116,7 @@ You will see a JSON response.
 Python client: see [request_annotate.py](./gcp_vertex_ai_course/request_annotate.py).
 
 OCR: works on images as well as PDF files. See [here](https://cloud.google.com/vision/docs/ocr). Go to cloud shell and run: 
+
 ```
 gcloud ml vision detect-text image1.png
 ````
@@ -127,12 +129,27 @@ gcloud ml vision detect-logos logo.png
 
 Image properties: `gcloud ml vision detect-image-properties tower.png` cropHintsAnnotation suggest where to crop image, gives good fit. dominantColors show colors in image.
 
-Object localization: `gcloud ml vision detect-objects train2757.jpg`
+Object localization: `gcloud ml vision detect-objects train2757.jpg`.
 
 Web entities: `gcloud ml vision detect-web elon.png`. Find similar or same images on internet.
 
-Safe search: `gcloud ml vision detect-safe-search violence.png`
+Safe search: `gcloud ml vision detect-safe-search violence.png`.
 
-Face detection: `gcloud ml vision detect-faces faces.png`
+Face detection: `gcloud ml vision detect-faces faces.png`. 
 
 So far, demos are done with gcloud, see guides to access using Python API: https://cloud.google.com/vision/docs/how-to.
+
+
+## Section 8
+
+Natural language API: Entity analysis, Sentiment analysis, Syntax analysis, Content classification. See https://cloud.google.com/natural-language.
+
+
+```
+gcloud ml language analyze-entities --content="puppies
+gcloud ml language analyze-sentiment --content="the movie was really good"
+gcloud ml language analyze-entity-sentiment --content="good job man"
+gcloud ml language classify-text --content="As a passionate traveler, I have had the privilege of visiting some of the most breathtaking places in the U.S, and along the way, I've discovered several spots that radiate romance. From awe-inspiring natural wonders to charming historic towns, here are my top 10 romantic spots in the U.S, each paired with helpful travel tips to make your visit even more special"
+```
+
+For API demo: https://cloud.google.com/natural-language/docs/analyzing-sentiment#analyzing_sentiment_in_a_string
