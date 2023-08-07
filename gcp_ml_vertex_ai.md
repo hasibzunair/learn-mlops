@@ -103,6 +103,7 @@ curl -X POST \
     -H "X-Goog-User-Project:focus-semiotics-393216" \
     https://vision.googleapis.com/v1/images:annotate -d @request.json
 ```
+
 You will see a JSON response.
 
 Next, `gcloud` tool: 
@@ -111,15 +112,12 @@ gcloud ml vision detect-labels gs://hasib-bucket/images/train2757.jpg
 gcloud ml vision detect-faces gs://hasib-bucket/images/train2757.jpg # no faces!
 ```
 
-You will see a JSON response.
-
 Python client: see [request_annotate.py](./gcp_vertex_ai_course/request_annotate.py).
 
-OCR: works on images as well as PDF files. See [here](https://cloud.google.com/vision/docs/ocr). Go to cloud shell and run: 
+OCR: works on images as well as PDF files. See [here](https://cloud.google.com/vision/docs/ocr). Go to cloud shell and run:
 
+```gcloud ml vision detect-text image1.png
 ```
-gcloud ml vision detect-text image1.png
-````
 
 Landmark: Run the following
 ```
@@ -139,11 +137,9 @@ Face detection: `gcloud ml vision detect-faces faces.png`.
 
 So far, demos are done with gcloud, see guides to access using Python API: https://cloud.google.com/vision/docs/how-to.
 
-
 ## Section 8
 
 Natural language API: Entity analysis, Sentiment analysis, Syntax analysis, Content classification. See https://cloud.google.com/natural-language.
-
 
 ```
 gcloud ml language analyze-entities --content="puppies
@@ -151,5 +147,14 @@ gcloud ml language analyze-sentiment --content="the movie was really good"
 gcloud ml language analyze-entity-sentiment --content="good job man"
 gcloud ml language classify-text --content="As a passionate traveler, I have had the privilege of visiting some of the most breathtaking places in the U.S, and along the way, I've discovered several spots that radiate romance. From awe-inspiring natural wonders to charming historic towns, here are my top 10 romantic spots in the U.S, each paired with helpful travel tips to make your visit even more special"
 ```
-
 For API demo: https://cloud.google.com/natural-language/docs/analyzing-sentiment#analyzing_sentiment_in_a_string
+
+## Section 9
+
+Speech to and from Text API. 125 langs, stream speech recognition. Content filtering, Automatic punctuation.
+
+Demo: https://cloud.google.com/speech-to-text#section-2
+
+## Section 10
+
+Auto ML Vision. 
