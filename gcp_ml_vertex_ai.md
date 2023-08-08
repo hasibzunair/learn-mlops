@@ -157,4 +157,17 @@ Demo: https://cloud.google.com/speech-to-text#section-2
 
 ## Section 10
 
-Auto ML Vision. 
+Auto ML Vision.
+
+Prepare data, train, deploy, test. See https://cloud.google.com/vertex-ai/docs/training-overview.
+
+Upload data in Cloud Storage. Open cloud shell, then run
+```
+gsutil ls gs://my_automl_image_dataset/shoe_sandal_boot_dataset/ # see three folders
+```
+
+Make csv file with image path and labels. (image-classify-dataset.csv).
+
+Go to Vertex AI Dataset and create dataset placeholder and import data from Cloud Storage. Add the path to the CSV file created earlier.
+
+Go to Vertex AI Training and create training job. In model details, do shoe_sandal_boot_training. Data split randomly assigned.
