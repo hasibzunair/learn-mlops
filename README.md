@@ -1,6 +1,6 @@
-# Learning Cloud
+# Learning MLOps
 
-My notes and materials while learning cloud stuff.
+My notes and materials while learning cloud stuff in the context of machine learning (MLOps).
 
 ### GCP course todos
 

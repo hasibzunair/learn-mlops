@@ -157,6 +157,15 @@ Demo: https://cloud.google.com/speech-to-text#section-2
 
 ## Section 10
 
+AutoML notes.
+In last few section we learned how to apply ML with Prebuilt API for vision, language & speech related generic use cases.
+
+Now onwards we will start will auto training with our own custom data using Google Cloud AutoML algorithm.
+
+Exited, Taking more charge on our data & model.
+
+## Section 11
+
 Auto ML Vision.
 
 Prepare data, train, deploy, test.
@@ -184,3 +193,50 @@ Vertex AI Model Registry, then go to Deploy and Test tab, two options: deploy as
 Either do Deploy to Endpoint or go to Vertex AI Online Prediction tab. Set number of compute nodes to 1 when Deploy to Endpoint. 
 
 The go to Model Registry > shoe_sandal_boot_training > Deploy and test and then simply upload images and test it! To delete, first undeploy endpoint and then delete it. Delete model registry artifacts, dataset from vertex dataset, and storage.
+
+## Section 12
+
+Text classification.
+
+## Section 13
+
+Tabular data
+
+## Section 14
+
+Google Cloud Vertex AI.
+
+Custom training: Own dataset, own model, write algo (scikit-learn, Tensorflow, PyTorch).
+
+Different from AutoML and API, in custom training do everything yourself lol.
+
+Custom training: Prebuilt containers and custom containers. See https://cloud.google.com/vertex-ai/docs/training/pre-built-containers. 
+
+Artifact Registry: Storage for docker images.
+
+Choose training method: AutoML vs Custom Training. See https://cloud.google.com/vertex-ai/docs/start/training-methods.
+
+**Vertex AI**: Platform to build, deploy and scale ML models inside GCP. See https://cloud.google.com/vertex-ai.
+
+### Custom training using IRIS dataset**
+-Explore data
+-Setup cloud storage bucket
+-Upload data to bucket
+-Create notebook instance
+-Training code
+-Make docker container
+-Push docker image to artifact registry
+-Setup custom training with custom container
+-Import model from bucket to model registry
+-Deploy to endpoint
+
+1. Create a bucket in GCS and upload data csv file.
+2. Go to Vertex AI Workbench and create managed notebook
+3. Train model and save model to GCS
+4. Convert notebook to train.py (`jupyter nbconvert Training.ipynb --to python`). Make req.txt and Dockerfile.
+5. Go to Artifact Registry and create artifact repo. Here we want to upload our docker image. Get URL (us-central1-docker.pkg.dev/vertex-course-hzr/custom-training-artifacts).
+6. Now give it image name and image tag like: us-central1-docker.pkg.dev/vertex-course-hzr/custom-training-artifacts/iris_custom:v1. Then run `export IMAGE_URI=us-central1-docker.pkg.dev/vertex-course-hzr/custom-training-artifacts/iris_custom:v1` in terminal inside custom training folder where you have all files like train.py req.txt and dockerfile. Then do `echo $IMAGE_URI` to check. 
+7. Make image `docker build -f Dockerfile -t ${IMAGE_URI} ./`.
+8. Now, we have docker image, before pushing to Artifact Registry we do sth. Go to AR and then setup instructions, copy command and run in terminal.
+9. Now push to registry: `docker push ${IMAGE_URI}`. You will see the image in AR named iris_custom version v1.
+10. TBA
