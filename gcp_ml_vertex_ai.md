@@ -159,7 +159,11 @@ Demo: https://cloud.google.com/speech-to-text#section-2
 
 Auto ML Vision.
 
-Prepare data, train, deploy, test. See https://cloud.google.com/vertex-ai/docs/training-overview.
+Prepare data, train, deploy, test.
+
+### Prepare Data
+
+See https://cloud.google.com/vertex-ai/docs/image-data/classification/prepare-data. 
 
 Upload data in Cloud Storage. Open cloud shell, then run
 ```
@@ -170,4 +174,13 @@ Make csv file with image path and labels. (image-classify-dataset.csv).
 
 Go to Vertex AI Dataset and create dataset placeholder and import data from Cloud Storage. Add the path to the CSV file created earlier.
 
-Go to Vertex AI Training and create training job. In model details, do shoe_sandal_boot_training. Data split randomly assigned.
+### Training
+Go to Vertex AI Training and create training job. In model details, do shoe_sandal_boot_training. Data split randomly assigned. After training, see the training job and see what's inside. 
+
+### Deploy to endpoint
+This automaitcally takes us to 
+Vertex AI Model Registry, then go to Deploy and Test tab, two options: deploy as endpoint or batch predict for offline use.
+
+Either do Deploy to Endpoint or go to Vertex AI Online Prediction tab. Set number of compute nodes to 1 when Deploy to Endpoint. 
+
+The go to Model Registry > shoe_sandal_boot_training > Deploy and test and then simply upload images and test it! To delete, first undeploy endpoint and then delete it. Delete model registry artifacts, dataset from vertex dataset, and storage.
