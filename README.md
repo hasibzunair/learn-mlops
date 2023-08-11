@@ -12,5 +12,4 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 
 ### Resources
-* [Docker course repository](https://github.com/hasibzunair/learn-docker)
-* [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
+* [My docker course repository](https://github.com/hasibzunair/learn-docker), Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
