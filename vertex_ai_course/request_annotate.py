@@ -14,7 +14,7 @@ from google.cloud import vision
 
 # def client
 client = vision.ImageAnnotatorClient()
-file_name = os.path.abspath("train2757.jpg")
+file_name = os.path.abspath("./images/train2757.jpg")
 
 # read file
 with io.open(file_name, "rb") as image_file:
