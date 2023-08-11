@@ -239,4 +239,35 @@ Choose training method: AutoML vs Custom Training. See https://cloud.google.com/
 7. Make image `docker build -f Dockerfile -t ${IMAGE_URI} ./`.
 8. Now, we have docker image, before pushing to Artifact Registry we do sth. Go to AR and then setup instructions, copy command and run in terminal.
 9. Now push to registry: `docker push ${IMAGE_URI}`. You will see the image in AR named iris_custom version v1.
-10. TBA
+10. Custom training with custom container: Go to vertex ai training, create new job, use default service account, custom container select the one we made in step 9, model output path is hardcoded in train.py, select no prebuilt container. Start training! Now you should see model.pkl in cloud storage where IRIS.csv is stored.
+11. Go to Model Registry, set framework and version, set path to trained model.
+12. Deploy model to endpoint, (go to right three dots and click, directly deploy from there or go iris-custom-model). Select machine, compute engine default service account, enable logging. Go to iris-custom-model and Deploy and Test. 
+13. Test endpoint. See Sample Request for instructions.
+
+In Cloud Shell:
+```
+# authenticate in CLI
+gcloud auth application-default login
+# env variables
+ENDPOINT_ID="2126264173095550976"
+PROJECT_ID="105664692517"
+INPUT_DATA_FILE="INPUT-JSON"
+# curl
+curl \
+-X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+https://us-central1-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/us-central1/endpoints/${ENDPOINT_ID}:predict \
+-d "@${INPUT_DATA_FILE}"
+```
+
+todo: python script request, aiplatofrm not working now.
+
+Undeploy model, delete endpoint, 
+
+Two way to predict:
+
+1. Online prediction (immediate result needed, must be deployed).
+2. Batch prediction (high volumes, run as job, no deployment needed from our end).
+
+Go to Batch Predictions, define input and output path, define machine, service accounts.
