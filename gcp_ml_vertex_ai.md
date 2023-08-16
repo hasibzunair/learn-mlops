@@ -293,4 +293,7 @@ gsutil cp gs://my_custom_container_training/IRIS.csv gs://my_prebuilt_container_
 4. See prebuilt_container_custom_train/train.ipynb for training code that will be submitted as job after converting to script. Run `jupyter nbconvert train.ipynb --to python`.
 5. Make a folder trainer in keep train.py there along with empty __init__.py file, and then add a setup.py outside of trainer folder. (prebuilt_container should have trainer/ and setup.py) Then run `python setup.py sdist --format=gztar`.
 6. Copy dist/trainer-0.2.tar file in GCS dataset bucket. `gsutil cp dist/trainer-0.1.tar.gz gs://my_prebuilt_container_training/`.
-7. 
+7. Go to Vertex AI Training and create job (iris_prebuilt_training), CE service account, set prebuilt container and add my_prebuilt_container_training/trainer-0.1.tar.gz, python module trainer.train.
+8. Go to Vertex AI Model Registry and create new import, define container settings and path to model (my_prebuilt_container_training/model_output/)
+9. Go to model import and deploy and test to endpoint, then hit deploy to endpoint, set machine type and service account. Hit deploy!
+10. 
