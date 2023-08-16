@@ -218,7 +218,10 @@ Choose training method: AutoML vs Custom Training. See https://cloud.google.com/
 
 **Vertex AI**: Platform to build, deploy and scale ML models inside GCP. See https://cloud.google.com/vertex-ai.
 
-### Custom training using IRIS dataset**
+## Section 15
+
+### Custom training using IRIS dataset
+
 -Explore data
 -Setup cloud storage bucket
 -Upload data to bucket
@@ -261,6 +264,8 @@ https://us-central1-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/location
 -d "@${INPUT_DATA_FILE}"
 ```
 
+See custom_container_custom_train for codes.
+
 todo: python script request, aiplatofrm not working now.
 
 Undeploy model, delete endpoint, 
@@ -271,3 +276,21 @@ Two way to predict:
 2. Batch prediction (high volumes, run as job, no deployment needed from our end).
 
 Go to Batch Predictions, define input and output path, define machine, service accounts.
+
+## Section 16
+
+### Pre-built container training using IRIS dataset
+
+1. Create new bucket, set region to us-central1.
+2. Move data from custom-training-bucket to new one.
+
+```bash
+gsutil ls # see buckets
+gsutil cp gs://my_custom_container_training/IRIS.csv gs://my_prebuilt_container_training/
+```
+
+3. Start noteook instance, customnotebooktraining, create new folder prebuilt_container and keep files there. Select kernel TensorFlow 2 (Local).
+4. See prebuilt_container_custom_train/train.ipynb for training code that will be submitted as job after converting to script. Run `jupyter nbconvert train.ipynb --to python`.
+5. Make a folder trainer in keep train.py there along with empty __init__.py file, and then add a setup.py outside of trainer folder. (prebuilt_container should have trainer/ and setup.py) Then run `python setup.py sdist --format=gztar`.
+6. Copy dist/trainer-0.2.tar file in GCS dataset bucket. `gsutil cp dist/trainer-0.1.tar.gz gs://my_prebuilt_container_training/`.
+7. 
