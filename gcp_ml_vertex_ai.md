@@ -296,4 +296,30 @@ gsutil cp gs://my_custom_container_training/IRIS.csv gs://my_prebuilt_container_
 7. Go to Vertex AI Training and create job (iris_prebuilt_training), CE service account, set prebuilt container and add my_prebuilt_container_training/trainer-0.1.tar.gz, python module trainer.train.
 8. Go to Vertex AI Model Registry and create new import, define container settings and path to model (my_prebuilt_container_training/model_output/)
 9. Go to model import and deploy and test to endpoint, then hit deploy to endpoint, set machine type and service account. Hit deploy!
-10. 
+10. Test JSON, then undeploy and delete endpoint
+
+
+### Pass arguments while training
+
+In both cases, if we want to change data, and define output again and again. Let's do using arguments. Parameterize inputs and output while submitting jobs, instead of hardcoding it.
+
+1. Make train.py to accept arguments.
+2. Make setup.py with new version and package code: `python setup.py sdist --formats=gztar`, download the tar file.
+3. Upload tar file to gcs, `gsutil cp dist/trainer-0.2.tar.gz gs://my_prebuilt_container_training/`.
+4. Create training job. In arguments add:
+
+```
+--input_data=gs://my_prebuilt_container_training/IRIS.csv
+--mod_out=gs://my_prebuilt_container_training/mod_out_withargs
+```
+
+After training, you will see model artifacts in a new folder in gcs. Then rest of deployment stuff is the same.
+
+## Section 17
+
+Vertex AI Labeling task to label your data.
+
+Vertex AI Pipelines. 
+
+1. Go to Workbench > User managed notebooks > Create new.
+2. Open an do pipeline1.ipynb.
