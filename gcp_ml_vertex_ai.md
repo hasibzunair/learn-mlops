@@ -319,7 +319,4 @@ After training, you will see model artifacts in a new folder in gcs. Then rest o
 
 Vertex AI Labeling task to label your data.
 
-Vertex AI Pipelines. 
-
-1. Go to Workbench > User managed notebooks > Create new.
-2. Open an do pipeline1.ipynb.
+Vertex AI Pipelines. See [here](https://github.com/ankit25587/course-material/blob/main/10-gcp-machine-learning-with-google-cloud/code/Pipeline/pipeline2.ipynb).
