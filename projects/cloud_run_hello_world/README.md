@@ -17,7 +17,7 @@ gcloud run deploy helloworld \
 ```
 
 ## todos
-* Deploy app to cloud run
+* TBA.
 
 ## References
 - https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service
