@@ -1,6 +1,6 @@
-# GCP Fundamentals for Beginners Notes
+# Terraform for Beginners using GCP - Google Cloud (Hands-on) Notes
 
-Course Link - [Link](https://concordia.udemy.com/course/terraform-for-beginners-using-google-cloud/learn/).
+Course Link - [Link](https://www.udemy.com/course/terraform-for-beginners-using-google-cloud/).
 
 ## Section 1
 
@@ -45,3 +45,32 @@ Write code with **HCL** that manages everything.
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
+
+## Section 3
+
+### Terraform Hello World
+
+Scope -> author (write config file) + Initialize -> plan -> apply
+
+**Scope and Author:**
+
+- Scope and author: Create local file, sample.txt with some content
+- Write config file in HCL
+- see helloworld/main.tf
+
+**Initialize -> plan -> apply:**
+
+init
+
+- first command after writing config file (go to `main.tf` and run `terraform init`)
+- init a working dir
+- download pluging
+
+plan
+
+- create exect plan (run `terraform plan` cmd in shell.)
+- doesnt change infra
+
+apply  
+
+- execute all change and provision resource specified in config files (`terraform apply`)

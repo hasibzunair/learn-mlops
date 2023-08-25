@@ -1,6 +1,9 @@
 # Custom
 .DS_Store
 *.json
+.terraform
+*.hcl 
+*.tfstate
 
 artifacts/
 models/
