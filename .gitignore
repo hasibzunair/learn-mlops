@@ -4,6 +4,7 @@
 .terraform
 *.hcl 
 *.tfstate
+*.backup
 
 artifacts/
 models/
