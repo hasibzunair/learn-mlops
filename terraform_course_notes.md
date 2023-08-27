@@ -46,11 +46,22 @@ brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
 
+Then, install extention Terraform in VSCode for terraform language.
+
 ## Section 3
 
 ### Terraform Hello World
 
-Scope -> author (write config file) + Initialize -> plan -> apply
+Scope -> author (write config file) + Initialize -> plan -> apply.
+
+Local provider -> Local file (write content and create files).
+
+```hcl
+# main.tf
+resource local_file sample_res {
+  filename = "sample.txt"
+  content = "I love terraform!"}
+```
 
 **Scope and Author:**
 
@@ -74,3 +85,201 @@ plan
 apply  
 
 - execute all change and provision resource specified in config files (`terraform apply`)
+
+**Arguments**:
+
+Do the same, but with changing argument.
+
+```hcl
+# main.tf
+resource local_file sample_res {
+  filename = "sample_args.txt"
+  sensitive_content = "I love terraform!"
+}
+```
+
+**Multiple resources**:
+
+Multiple resources in a single file.
+
+```hcl
+resource local_file cat_res {
+  filename = "cat.txt"
+  sensitive_content = "I love cats!"
+}
+
+resource local_file dog_res {
+  filename = "dog.txt"
+  sensitive_content = "I love dogs!"
+}
+```
+
+**Random provider**:
+
+So far, we saw one single provider to write file with content.
+
+Random provider introduces randomness, ID generation, random string etc. It is a logical provider. random provider has random_id random_integer etc.
+
+```hcl
+resource random_integer rint {
+  min = 100
+  max = 200
+}
+
+# like print statement
+output name1 {
+  value = random_integer.rint.result
+}
+```
+
+Do same for string.
+
+```hcl
+resource random_string rstring {
+    length = 20
+}
+
+# like print statement
+output name1 {
+  value = random_string.rstring.result
+}
+```
+
+**Variables**:
+
+Use variable to define config file.
+
+```
+# main.tf
+resource local_file sample_res {
+  filename = var.filename
+  sensitive_content = var.content
+}
+```
+
+```
+# variables.tf
+variable filename {
+  type = string
+  default = "sample.txt"
+}
+
+variable content {
+  type = string
+  default = "I am loving terraform!"
+}
+```
+
+It destroys old resource and creates new one for us!
+
+**Other variables**:
+
+```
+# main.tf
+resource local_file sample_res {
+  filename = var.filename1
+  #sensitive_content = var.content1[0] # for lists
+  sensitive_content = var.content1["name"] # for maps
+}
+
+
+# variables.tf
+variable filename1 {
+  type = string
+  default = "sample1.txt"
+}
+
+/*
+variable content1 {
+  type = number
+  default = 23
+}
+*/
+
+/*
+variable content1 {
+  type = bool
+  default = true
+}
+*/
+
+/*
+variable content1 {
+  type = list(string)
+  default = ["red", "green", "blue"]
+}
+*/
+
+/*
+variable content1 {
+  type = tuple([string,bool,number])
+  default = ["red", true, 23]
+}
+*/
+
+variable content1 {
+  type = map
+  default = {name = "Hasib", age = 29}
+}
+```
+
+Naming conventions: terraform.tfvars, terraform.tfvars.json etc.
+
+**Multiple Providers**:
+
+Two providers in one single file.
+
+```
+# main.tf
+resource local_file sample_res {
+  filename = "sample.txt"
+  content = "This is HCL."
+}
+
+resource random_string name {
+    length = 10
+}
+```
+
+Now, how to put resource from another provider into content. Other resource attribute in another resource.
+
+```
+# Implicit
+resource local_file name1 {
+  filename = "implicit.txt"
+  content = "This is random string from RP : ${random_string.name2.id}"
+}
+
+resource random_string name2 {
+    length = 10
+}
+```
+
+```
+# Explicit
+resource local_file name1 {
+  filename = "explicit.txt"
+  content = "This is random string from RP : ${random_string.name2.id}"
+  depends_on = [random_string.name2]
+}
+
+resource random_string name2 {
+    length = 10
+}
+```
+
+**Output Blocks**:
+
+```
+# main.tf
+resource random_string rand_name {
+    length = 10
+}
+
+# output.tf
+output name {
+  value       = random_string.rand_name.id
+}
+```
+
+TBA.

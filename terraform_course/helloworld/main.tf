@@ -1,4 +1,4 @@
 resource local_file sample_res {
-  filename = "sample.txt"
-  content = "I love terraform!"
+  filename = var.filename
+  sensitive_content = var.content
 }
