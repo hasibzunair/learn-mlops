@@ -16,9 +16,7 @@ gcloud run deploy helloworld \
 --image gcr.io/${GOOGLE_CLOUD_PROJECT}/helloworld
 ```
 
-## todos
-* TBA.
-
 ## References
+
 - https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service
 - https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/run
