@@ -282,4 +282,63 @@ output name {
 }
 ```
 
-TBA.
+**Lifecycle rules**:
+
+- create before destry
+- prevent destroy
+- ignore changes
+
+```
+# main.tf
+resource random_integer name {
+  min = 20
+  max = 350
+
+    lifecycle{
+        #create_before_destroy = true
+        #prevent_destroy = true
+        ignore_changes = [min]
+    }
+}
+```
+
+**Provider version**:
+
+```
+# main.tf
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "2.3.1"
+    }
+  }
+}
+
+provider "random" {
+  # Configuration options
+}
+
+resource random_integer name {
+  min = 0
+  max = 100
+}
+```
+
+**Data source**:
+
+```
+# main.tf
+
+# read file
+data local_file name {
+  filename = "sample1.txt"
+}
+
+# print
+output name1 {
+  value = data.local_file.name.content
+}
+
+
+```
