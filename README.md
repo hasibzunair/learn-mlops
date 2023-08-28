@@ -6,6 +6,7 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 * Deploy API on cloud run ([link](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)), call API locally (use old docker API code for this)
 * Deploy frontend gradio ML app on GCP
+* Cloud run, cloud functions, Make VMs
 * Do section 14 but for a vision task
 * Train, test and deploy model as an API using all GCP AI components
 * Auto train and deploy?
