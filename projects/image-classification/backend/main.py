@@ -36,7 +36,7 @@ async def predict_image(image: bytes = File(...)):
     return predictions
 
 if __name__ == "__main__":
-    uvicorn.run(app, debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    uvicorn.run(app, debug=True)
     print("Running server.")
     # See 127.0.0.1:8000/docs for more info.
     # ENDPOINT_URL is http://127.0.0.1:8000/api/predict

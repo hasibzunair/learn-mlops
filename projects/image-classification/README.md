@@ -4,7 +4,6 @@ This is code for image classification using a deep learning model, deploy in Goo
 
 ## Todos
 
-- Deploy backend
 - Deploy frontend
 - Cloud function?
 

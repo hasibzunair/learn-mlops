@@ -17,7 +17,7 @@ This code is deployed as an API in Cloud Run. For more details on the backend, s
 
   ```bash
   # run
-  docker run -p 9090:8080 classifier:v1
+  docker run -p 8000:8080 classifier:v1
   # get predictions
   curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"
   ```
@@ -37,4 +37,4 @@ This code is deployed as an API in Cloud Run. For more details on the backend, s
   ```
 ~~~
 
-After deployment, run `curl -X POST -F image=@test1.jpeg "http://0.0.0.0:8000/api/predict"` to get predictions for an image.
+After deployment, run `curl -X POST -F image=@test1.jpeg "https://classifier-j3y7zumhxa-uc.a.run.app/api/predict"` to get predictions for an image.
