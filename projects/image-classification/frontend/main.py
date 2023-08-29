@@ -4,7 +4,7 @@ import requests
 # Set URL
 # Run: 
 # docker run -p 8000:80 --name cls-serve hasibzunair/classification_model_serving
-REST_API_URL = "http://host.docker.internal:8000/api/predict"
+REST_API_URL = "https://classifier-j3y7zumhxa-uc.a.run.app/api/predict"
 
 # Inference!
 def inference(image_path):
@@ -50,7 +50,7 @@ frontend = gr.Interface(inference,
 
 # Launch app and set PORT
 try:
-    frontend.launch(server_name="0.0.0.0", server_port=7860)
+    frontend.launch(server_name="0.0.0.0", server_port=8080)
 except KeyboardInterrupt:
     frontend.close()
 except Exception as e:
