@@ -339,6 +339,20 @@ data local_file name {
 output name1 {
   value = data.local_file.name.content
 }
-
-
 ```
+
+### Section 4
+
+**Terraform with GCP**:
+
+Create new project and service account.
+
+**Google cloud provider**:
+
+So far we saw,
+
+- L, read files
+- R, generate randomness
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs 
+
