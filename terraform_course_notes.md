@@ -356,3 +356,47 @@ So far we saw,
 
 https://registry.terraform.io/providers/hashicorp/google/latest/docs 
 
+**Connect with GCP**:
+
+1. Username/password
+2. Google cloud vm
+3. Service account keys
+
+Create a gcp bucket.
+
+Install HashiCorp Terraform extension on VSCode.
+
+**Connect with GCP Way 1**:
+
+From local machine how to autheticate with gcp to create new resource. See `gcp/get-started-gcp/` folder.
+
+```
+# main.tf
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "4.80.0"
+    }
+  }
+}
+
+provider "google" {
+  # Configuration options
+  project = "deployment-stuff"
+  region = "us-central1"
+  zone = "us-central1-a"
+}
+
+resource google_storage_bucket "default" {
+  name = "bucket-from-tf-hasibzunair-121233"
+  location      = "US"
+  storage_class = "STANDARD"
+}
+```
+
+Run `gcloud auth application-default login` to autheticate. Then run`main.tf`, it will create a new bucket in gcp!
+
+**Connect with GCP Way 2**:
+
+Inside gcp, how to autheticate with gcp to create new resource.
