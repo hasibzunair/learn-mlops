@@ -400,3 +400,58 @@ Run `gcloud auth application-default login` to autheticate. Then run`main.tf`, i
 **Connect with GCP Way 2**:
 
 Inside gcp, how to autheticate with gcp to create new resource.
+
+1. Open cloud shell.
+2. Run previous main.tf
+3. A new bucket will be created!
+
+**Connect with GCP Way 3**:
+
+Autheticate with service account.
+
+1. Go to IAM > Service Accounts > Create a service acc (terraform-gcp@deployment-stuff.iam.gserviceaccount.com)
+2. Manage keys, create key, JSON, download file
+3. Grant access to service account for Storage access to create resources (terraform-gcp@deployment-stuff.iam.gserviceaccount.com).
+4. Run
+
+```
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "4.80.0"
+    }
+  }
+}
+
+provider "google" {
+  # Configuration options
+  project = "deployment-stuff"
+  region = "us-central1"
+  zone = "us-central1-a"
+  credentials = "keys.json" # new arg added
+}
+
+resource google_storage_bucket "default" {
+  name = "bucket-from-tf-hasibzunair-121233-with-service-acc"
+  location      = "US"
+  storage_class = "STANDARD"
+}
+```
+
+Then terraform init, plan and apply! You will see new bucket.
+
+**Resource Provision**:
+
+How to provision different services and resources inside GCP.
+
+In next videos, we will see how what resource does, how to provision them using cloud console and terraform scripts.
+
+1. What resource does?
+2. Cloud console provisioning?
+3. Terraform script with minimum attributes
+4. More arguments
+
+### Section 5
+
+TBA.
