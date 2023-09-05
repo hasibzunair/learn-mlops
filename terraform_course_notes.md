@@ -458,9 +458,17 @@ In next videos, we will see how what resource does, how to provision them using 
 
 1. Make three files, keys.json, provider.tf and main.tf
 2. Hit CTRL + Space to get suggestions.
-3. See gcs-with-terraform folder.
+3. See `gcs-with-terraform` folder.
 
 Make a bucket and upload object using Terraform.
 
 ### Section 6
+
+Networking.
+
+### Section 7
+
+**GCE + Terraform**:
+
+See `gce-with-terraform` folder.
 
