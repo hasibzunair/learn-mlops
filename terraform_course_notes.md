@@ -466,9 +466,14 @@ Make a bucket and upload object using Terraform.
 
 Networking.
 
+No network, no cloud.
+
+See `network-with-terraform` folder. Add service account role, compute admin.
+
+See https://registry.terraform.io/providers/hashicorp/google/latest/docs.
+
 ### Section 7
 
 **GCE + Terraform**:
 
 See `gce-with-terraform` folder.
-
