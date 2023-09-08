@@ -477,3 +477,11 @@ See https://registry.terraform.io/providers/hashicorp/google/latest/docs.
 **GCE + Terraform**:
 
 See `gce-with-terraform` folder.
+
+Attach a service account to create a VM. Add firewall rule to ssh into VM. Attach disk. Do `terraform destroy`.
+
+### Section 8
+
+**Google Cloud Run with Terraform**:
+
+TBA.

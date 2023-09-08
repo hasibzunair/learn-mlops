@@ -10,7 +10,7 @@ resource "google_compute_instance" "vm-from-tf" {
 
     # define network
     network_interface {
-      network = "default"
+      network = "custom-vpc-tf"
     }
 
     # define hard disk
@@ -27,4 +27,35 @@ resource "google_compute_instance" "vm-from-tf" {
         "dep" = "datascience"
     }
 
+    scheduling {
+        preemptible = false
+        automatic_restart = false
+    }
+    
+    # attach service account to use gcloud commands inside VM
+    service_account {
+        email = "terraform-gcp@deployment-stuff.iam.gserviceaccount.com"
+        scopes = [ "cloud-platform" ]
+    }
+
+    lifecycle {
+        ignore_changes = [
+        attached_disk
+        ]
+    }
+
+}
+
+
+# attach disk
+resource "google_compute_disk" "disk-1" {
+  name  = "disk-1"
+  size = 15
+  type  = "pd-ssd"
+  zone  = "us-central1-a"
+}
+
+resource "google_compute_attached_disk" "default" {
+  disk     = google_compute_disk.disk-1.id
+  instance = google_compute_instance.vm-from-tf.id
 }
