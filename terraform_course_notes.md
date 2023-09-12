@@ -488,3 +488,9 @@ Serverlesssssss!
 
 See `cloud-run-tf` folder. Give Cloud Run Admin access to terraform service acc.
 
+### Section 9
+
+**Cloud function with Terraform**:
+
+See `cloud-func-tf` folder.
+
