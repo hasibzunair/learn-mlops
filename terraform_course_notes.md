@@ -494,3 +494,10 @@ See `cloud-run-tf` folder. Give Cloud Run Admin access to terraform service acc.
 
 See `cloud-func-tf` folder.
 
+### Section 10, 11 (BigQuery and PubSub)
+
+Went over videos only.
+
+### Section 12
+
+TBA.
