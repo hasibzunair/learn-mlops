@@ -19,6 +19,7 @@ See [image-classification/frontend](https://github.com/hasibzunair/learn-mlops/t
 ## Todos
 
 - Cloud functions?
+- Cloud run and function difference?
 
 ## References
 
