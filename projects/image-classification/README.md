@@ -20,6 +20,7 @@ See [image-classification/frontend](https://github.com/hasibzunair/learn-mlops/t
 
 - Cloud functions?
 - Cloud run and function difference?
+- Deploy API and frontend app using Terraform?
 
 ## References
 
