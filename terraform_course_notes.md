@@ -494,10 +494,8 @@ See `cloud-run-tf` folder. Give Cloud Run Admin access to terraform service acc.
 
 See `cloud-func-tf` folder.
 
-### Section 10, 11 (BigQuery and PubSub)
+Went over videos only for rest of the sections.
 
-Went over videos only.
+### Ending notes
 
-### Section 12
-
-TBA.
+For docs related to other gcp services, see here: https://registry.terraform.io/providers/hashicorp/google/latest/docs
