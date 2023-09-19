@@ -4,9 +4,8 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 ## Todos
 
-* Train, test and deploy model as an API using all GCP AI components
-* Auto train and deploy?
-* Dockerize the API and then deploy it on a k8s cluster running on Google Kubernetes Engine (GKE), Google Cloud Run. [link](https://github.com/sayakpaul/ml-deployment-k8s-fastapi).
+* https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html (Project to do: Train dog cat classifier with this way)
+* Brainstorm project idea
 
 ## Goals
 
