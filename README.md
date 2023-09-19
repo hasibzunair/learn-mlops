@@ -4,7 +4,7 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 ## Todos
 
-* https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html (Project to do: Train dog cat classifier with this way)
+* https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html (Project to do: Train dog cat classifier with this way), when done move it down in Things to Learn notes.
 * Brainstorm project idea
 
 ## Goals
