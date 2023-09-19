@@ -1,4 +1,4 @@
-# Image classifier
+# Image classifier deploy
 
 This is code for image classification using a deep learning model, deploy in Google Cloud Run. More details are [imagercg-waiter](https://github.com/hasibzunair/imagercg-waiter/).
 
@@ -15,12 +15,6 @@ See [image-classification/backend](https://github.com/hasibzunair/learn-mlops/tr
 ## Frontend Webapp
 
 See [image-classification/frontend](https://github.com/hasibzunair/learn-mlops/tree/main/projects/image-classification/frontend).
-
-## Todos
-
-- Cloud functions?
-- Cloud run and function difference?
-- Deploy API and frontend app using Terraform?
 
 ## References
 
