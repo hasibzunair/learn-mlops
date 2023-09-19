@@ -10,8 +10,9 @@ My notes and materials while learning cloud stuff in the context of machine lear
 * Do section 14 but for a vision task
 * Train, test and deploy model as an API using all GCP AI components
 * Auto train and deploy?
-* Dockerize the API and then deploy it on a k8s cluster running on Google Kubernetes Engine (GKE), Google Cloud Run. [link](https://github.com/sayakpaul/ml-deployment-k8s-fastapi)
+* Dockerize the API and then deploy it on a k8s cluster running on Google Kubernetes Engine (GKE), Google Cloud Run. [link](https://github.com/sayakpaul/ml-deployment-k8s-fastapi).
 
+### Projects
 
-### Resources
-* [My docker course repository](https://github.com/hasibzunair/learn-docker), Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
+1. [My docker course repository](https://github.com/hasibzunair/learn-docker), Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
+2. GCP + Vertex AI course project: [Project](https://github.com/hasibzunair/learn-mlops/tree/main/projects/image-classification).
