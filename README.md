@@ -9,7 +9,7 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 ## Goals
 
-Do a big project that uses REST API, Gradio, Docker, GCP, Vertex AI, Terraform, Github Actions, and deep learning of course! Maybe not kubernetes hahah.
+Do a big project that uses REST API, Gradio, Docker, GCP, Vertex AI, Terraform, Github Actions, and deep learning of course! Maybe not kubernetes hahah. ONNX-optimized model as a RESTful web service, Dockerize the API, deploy on GCP, auto deploy with GH Actions, log results.
 
 ## Projects
 
