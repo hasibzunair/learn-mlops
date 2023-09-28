@@ -26,4 +26,77 @@ git merge <name> # merge branch
 
 ## Section 3
 
-TBA.
+**Key Elements**: Workflows, jobs and steps.
+
+Repository -> Workflow -> Jobs -> Steps (acutal thing done like download code, install libs, etc).
+
+Workflows: Contains one or more jobs. Triggered on events.
+
+Jobs: Define a runner (exec environment), contains one or more steps. Runs in parallel or sequential, can be conditional.
+
+Steps: shell script or action, perform a certain task, use custom or third-party actions, steps executed in order.
+
+See some gh actions in https://github.com/hasibzunair/image-classifier-gradio-demo and https://github.com/mlmed/torchxrayvision/blob/master/.github/workflows/tests.yml.
+
+```yaml
+# first-action.yml
+name: My first workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello World"
+      - name: Print goodbye
+        run: echo "Done, byeee! :D"
+```
+
+https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
+**Actions**: A custom application that performs a frequently repeated task. You can build your own actions.
+
+See https://github.com/marketplace?category=&query=&type=actions&verification=.
+
+```yaml
+# deploy.yml
+name: Deploy Project
+on: [push, workflow_dispatch] # multiple event triggers
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install libs
+        run: npm ci
+      - name: Run tests
+        run: npm test
+  # Another job
+  deploy:
+    # If previous job passes, only run this job
+    needs: test
+    # every job has its own runner, its own vm that is isolated from other
+    # machines and jobs.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install libs
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Build project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying ..."
+```
+
