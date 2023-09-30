@@ -100,3 +100,30 @@ jobs:
         run: echo "Deploying ..."
 ```
 
+See context objects: https://docs.github.com/en/actions/learn-github-actions/contexts, and expressions https://docs.github.com/en/actions/learn-github-actions/expressions. For actions and commands that need metadata: 
+
+```yaml
+name: Output info
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context
+        run: echo "${{ toJSON(github) }}" # reserved word
+```
+
+Summary: 
+
+Core components, workflows (events + jobs), jobs (runner + steps), steps (do actual work).
+
+Events/triggers, workflows have at least one event(s).
+
+Defien workflows, .github/workflows/<file>.yml, github actions syntax.
+
+Runners are servers and machines that execture jobs, pre-def runners, also create custom runner.
+
+Workflow exec when event (PR, new commit etc) triggered.
+
+Actions can run shell commands, also predef actions.
+
