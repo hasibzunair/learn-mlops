@@ -113,7 +113,7 @@ jobs:
         run: echo "${{ toJSON(github) }}" # reserved word
 ```
 
-Summary: 
+**Summary**:
 
 Core components, workflows (events + jobs), jobs (runner + steps), steps (do actual work).
 
@@ -127,3 +127,86 @@ Workflow exec when event (PR, new commit etc) triggered.
 
 Actions can run shell commands, also predef actions.
 
+```yaml
+name: Deployment Exercise 1
+on: push # Do it when code is pushed
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # get code in gh machine
+      - name: Get code
+        uses: actions/checkout@v3
+      # install dependencies
+      - name: Install libs
+        run: npm ci
+      #- name: Lint
+      #  run: npm run lint
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy code
+        run: echo "Deploying...."
+```
+
+```yaml
+name: Deployment Exercise 2
+on: push # Do it when code is pushed
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # get code in gh machine
+      - name: Get code
+        uses: actions/checkout@v3
+      # install dependencies
+      - name: Install libs
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      # get code in gh machine
+      - name: Get code
+        uses: actions/checkout@v3
+      # install dependencies
+      - name: Install libs
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      # get code in gh machine
+      - name: Get code
+        uses: actions/checkout@v3
+      # install dependencies
+      - name: Install libs
+        run: npm ci
+      - name: Build code
+        run: npm run build
+      - name: Deploy code
+        run: echo "Deploying...."
+```
+
+```yaml
+name: Issues Exercise
+on: issues # Do it when new issue
+jobs:
+  output-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
+
+```
+
+## Section 4
+
+TBA.
