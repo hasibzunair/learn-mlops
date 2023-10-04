@@ -209,4 +209,57 @@ jobs:
 
 ## Section 4
 
+Events that trigger workflows. Like, not all push event triggers workflow. More control over when a workflow runs.
+
+Repo related events -> push, pull_request, create, issues, etc.
+
+Other -> workflow_dispatch, schedule, workflow_call etc.
+
+Events: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+
+```yaml
+name: Events Demo 1
+on:
+  pull_request:
+    types:
+      - opened
+      branches:
+      - main
+      - 'dev-*' # dev-new, dev-this-is-new
+      - 'feat/**' # feat/new, feat/new/button
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' # dev-new, dev-this-is-new
+      - 'feat/**' # feat/new, feat/new/button
+    paths-ignore:
+     - '.github/workflows/*' # if we dont change here, trigger workflow
+    # or
+    #paths-ignore:
+    # - '.github/workflows/*' # if we dont change here, trigger workflow
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploying..."
+```
+
+To skip workflow: 
+
+```git commit -m "add comments [skip ci]"```
+
+## Section 5
+
 TBA.
