@@ -350,3 +350,13 @@ Summary: Artifacts upload and download in diff jobs, Use job outputs /values in 
 Environment variables and secrets. Hardcoding is not often solution!
 
 Env variables: values needed at different places, values might change. Variables can be dynamic.
+
+https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+
+Secrets: credentials we dont want in workflow file! Repo-> Settings-> Secrets and variables.
+
+Summary: Environment variables, Secrets, GH Actions environments. 
+
+## Section 7
+
+TBA.
