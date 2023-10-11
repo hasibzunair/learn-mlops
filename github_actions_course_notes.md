@@ -347,4 +347,6 @@ Summary: Artifacts upload and download in diff jobs, Use job outputs /values in 
 
 ## Section 6
 
-TBA.
+Environment variables and secrets. Hardcoding is not often solution!
+
+Env variables: values needed at different places, values might change. Variables can be dynamic.
