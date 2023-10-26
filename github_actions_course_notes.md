@@ -733,6 +733,94 @@ Summary: conditional jobs, matrix jobs, reusable workflows.
 
 Using containers for full control instead of using runner machine in github.
 
+## Section 9
 
+Custom actions.
 
+Three custom actions: Javascript, docker, composite actions
 
+```yaml
+# Custom actions in .github/actions/cached-deps/action.yml
+name: 'Get and cache deps'
+description: 'Get the deps via npm and cache them'
+runs:
+  using: 'composite'
+  steps: 
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
+```
+
+We use it in:
+
+```yaml
+# .github/workflow/deploy.yml
+name: Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Load and cache deps # more simple now
+        uses: ./.github/actions/cached-deps/
+      - name: Lint code
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Load and cache deps # more simple now
+        uses: ./.github/actions/cached-deps/
+      - name: Test code
+        id: run-tests
+        run: npm run test
+      - name: Upload test report
+        if: failure() && steps.run-tests.outcome == 'failure'
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: test.json
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Load and cache deps # more simple now
+        uses: ./.github/actions/cached-deps/
+      - name: Build website
+        run: npm run build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+          path: ./dist
+      - name: Output contents
+        run: ls
+      - name: Deploy site
+        run: echo "Deploying..."
+```
