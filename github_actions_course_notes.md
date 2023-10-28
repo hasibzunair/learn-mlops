@@ -758,7 +758,7 @@ runs:
       shell: bash
 ```
 
-We use it in:
+We use custom actions in all jobs:
 
 ```yaml
 # .github/workflow/deploy.yml
@@ -824,3 +824,7 @@ jobs:
       - name: Deploy site
         run: echo "Deploying..."
 ```
+
+## Section 10
+
+TBA.
