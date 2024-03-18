@@ -12,8 +12,9 @@ Do a big project that uses REST API, Gradio, Docker, GCP, Vertex AI, Terraform, 
 
 ## Projects
 
-1. Docker course, Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b)
+1. Docker course, Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b), [hasibzunair/learn-docker](https://github.com/hasibzunair/learn-docker)
 2. GCP + Vertex AI course, Project: [Deploy image classification REST API and frontend app in GCP](https://github.com/hasibzunair/learn-mlops/tree/main/projects/image-classification).
+3. Python GitHub Actions Workflows: [hasibzunair/python-actions-examples](https://github.com/hasibzunair/python-actions-examples)
 
 ## List of courses
 
@@ -53,9 +54,3 @@ https://learn.deeplearning.ai/pair-programming-llm/
 
 12. CAP6412 Advanced Computer Vision - Spring 2023
 https://www.youtube.com/playlist?app=desktop&list=PLd3hlSJsX_In7qup928HaHmilugBGctuF 
-
-
-## Resources
-
-* [My notes and code snippets repo for Docker course](https://github.com/hasibzunair/learn-docker).
-* GitHub Actions Examples: [link](https://github.com/hasibzunair/python-actions-examples)
