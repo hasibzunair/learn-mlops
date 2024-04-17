@@ -47,6 +47,8 @@ docker run -d ubuntu sleep 100
 docker ps -a 
 # Execute command on running container. We see contents by running cat command
 docker exec container_id cat /etc/*release*
+# Go inside docker container
+docker exec -it container_id sh
 ```
 
 #### Port mapping, 80 is outside host port and 5000 is docker container port.
