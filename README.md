@@ -4,9 +4,9 @@ My notes and materials while learning cloud stuff in the context of machine lear
 
 ## Goals
 
-Do a big project that uses REST API, Gradio, Docker, GCP, Vertex AI, Terraform, Github Actions, and deep learning of course! Maybe not kubernetes hahah. ONNX-optimized model as a RESTful web service, Dockerize the API, deploy on GCP, auto deploy with GH Actions, log results.
+Aim for an end-to-end project that uses REST API, Gradio, Docker, GCP, Vertex AI, Terraform, Github Actions, and deep learning of course! Maybe not kubernetes hahah. ONNX-optimized model (for latency) as a RESTful web service, Dockerize the API, deploy on GCP, auto deploy with GH Actions, monitor and log results.
 
-## Projects
+## Projects Done
 
 1. Docker course, Project: [Build and Deploy Custom Docker Images for Object Recognition](https://pub.towardsai.net/build-and-deploy-custom-docker-images-for-object-recognition-d0d127b2603b), [hasibzunair/learn-docker](https://github.com/hasibzunair/learn-docker)
 2. GCP + Vertex AI course, Project: [Deploy image classification REST API and frontend app in GCP](https://github.com/hasibzunair/learn-mlops/tree/main/projects/image-classification).
